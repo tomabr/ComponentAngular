@@ -1,0 +1,83 @@
+@import "materialize.scss"
+
+.container
+  @extend .row
+  background-color: rgba(0, 0, 0, 0.1)
+
+.main
+  @extend .col
+  @extend .m12
+
+
+.main__head
+  font-size: 1.6em
+  color: $secondary-color
+  text-align: center;
+
+.favourite
+  @extend .col
+  @extend .m4
+  background: $secondary-color
+  padding-bottom: 2em !important
+
+.favourite__head
+  font-size: 1.3em
+  margin: 2.1rem 0 1.68rem 0
+  color: #fff
+  text-align: center
+
+.favourite__button
+  @extend .btn
+  background: $primary-color
+  margin: 2em auto 2em
+  display: flex
+
+.photo__item
+  @extend .card
+  display:block
+  float: left
+  margin: .15em
+  width: 150px
+  height: 150px
+  &.--clickable
+    cursor: pointer
+
+.search
+  overflow: auto
+  padding: 2em
+  @extend .col
+  @extend .m8
+
+.search__button
+  @extend .btn
+  margin-left: 2em
+  &.--reset
+    background: $primary-color
+
+.error
+  width: 100%
+  font-size: 2em;
+  clear: both;
+  background: $primary-color
+  padding: 1em
+  margin: 1em 0
+  color: #fff
+  text-align: center
+
+.result
+  display: block
+  overflow: auto
+  margin-top: 4em
+  clear: both
+
+.preloader
+  @extend .preloader-wrapper
+  @extend .big
+  @extend .active
+  position: absolute
+  top: 50%
+  left: 50%
+
+
+
+

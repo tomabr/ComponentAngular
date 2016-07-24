@@ -1,0 +1,7 @@
+<h3 class="favourite__head">Favourite photos</h3>
+
+<input type="button" class="favourite__button" value="Remove all" ng-show="model.photos.length" ng-click="model.removeFavourites()"/>
+
+<div ng-repeat="photo in model.photos track by $index" class="photo">
+  <img ng-src="{{photo.url}}" title="{{photo.title}}" alt="" class="photo__item"/>
+</div>

@@ -1,0 +1,31 @@
+<div class="search">
+  <form name="searchPhotos">
+    <label> Search term:
+      <input type="text" placeholder="Please insert title" ng-model="model.searchTerm" />
+    </label>
+    <input type="submit" value="Search" ng-click="model.search(model.searchTerm)" class="search__button" />
+    <input type="reset" ng-click="model.reset()" value="Reset" class="search__button --reset" />
+  </form>
+  <div class="preloader" ng-show="model.preloader">
+    <div class="spinner-layer spinner-gren-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+  <div class="result" scroll ng-show="model.photos">
+    <div ng-repeat="photo in model.photos track by $index" class="photo">
+      <img ng-src="{{photo.url}}" title="{{photo.title}}" alt="" ng-click="model.addToFavourite(photo)" class="photo__item --clickable" />
+    </div>
+  </div>
+  <div class="error" ng-show="model.error">
+    <strong>{{model.error.message}}</strong>
+  </div>
+</div>
+<favourite-box class="favourite" photos="model.favouritePhotos" remove="model.removeAll()"></favourite-box>
